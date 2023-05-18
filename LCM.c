@@ -1,15 +1,32 @@
 #include<stdio.h>
 int main()
-{
-    int a,b,i,g=0,l;
-    scanf("%d%d",&a,&b);
-    for(i=1;i<=b && i<=a;i++)
+{ 
+    int a,b,m,i=2,l=1; 
+    scanf("%d%d",&a,&b); 
+    if(a<b) 
     {
-       if(a%i==0 && b%i==0)
-      {
-          g=i;
-      }
+        m=b; 
+        
     }
-    l=(a*b)/g;
-    printf("%d",l);
-}
+    else 
+    { 
+        m=a; 
+        
+    }
+    while(a!=0 && b!=0 && i<=m)
+    { 
+        if(a%i==0 && b%i==0)
+    {
+        l=l*i;
+        a=a/i;
+        b=b/i;
+        i=2;
+    }
+    else 
+    { 
+        i++;
+    } 
+        
+    } 
+    l=l*a*b;
+    printf("%d",l);}
